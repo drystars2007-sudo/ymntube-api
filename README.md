@@ -38,6 +38,14 @@ curl "http://localhost:8080/api/v1/videos/dQw4w9WgXcQ"
 
 Responses contain `id`, `title`, `uploader`, `thumbnailUrl`, `watchUrl`, `durationSeconds`, and `viewCount`. Invalid input returns HTTP 400; upstream extraction failures return HTTP 502.
 
+Download the fixed Big Buck Bunny licensed sample:
+
+```sh
+curl "http://localhost:8080/api/v1/sample-video/download" -o big-buck-bunny-sample.mp4
+```
+
+This endpoint downloads only Blender Foundation's 320x180 Big Buck Bunny sample from the fixed Blender download host. The short film is by the Blender Foundation and is distributed under [Creative Commons Attribution 3.0 (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/); see the [Big Buck Bunny project page](https://peach.blender.org/) and [sample source](https://download.blender.org/peach/bigbuckbunny_movies/). The endpoint is a demonstration for this licensed sample only: it does not accept a URL, fetch YouTube media, or return YouTube stream/download URLs. Upstream responses are limited to 50 MiB, use a 10-second connection timeout and 30-second request timeout, and redirects are not followed. An oversized sample returns HTTP 413; unavailable or unexpected upstream responses return HTTP 502.
+
 ## Test and build
 
 ```sh
