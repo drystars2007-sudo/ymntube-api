@@ -1,0 +1,9 @@
+SPDX-License-Identifier: GPL-3.0-or-later
+
+This project is licensed under the GNU General Public License, version 3 or
+(at your option) any later version. The full license text is available at:
+https://www.gnu.org/licenses/gpl-3.0.html
+
+NewPipe Extractor is a separate work, distributed under the GNU GPL. Its source
+is obtained as a versioned dependency from JitPack and is not included in this
+repository.
